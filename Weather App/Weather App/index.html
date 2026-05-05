@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weatheria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sky background layer -->
+  <div class="sky-layer" aria-hidden="true">
+    <div class="sun-glow"></div>
+    <div class="bg-cloud bc1"></div>
+    <div class="bg-cloud bc2"></div>
+    <div class="bg-cloud bc3"></div>
+    <div class="bg-cloud bc4"></div>
+    <div class="bg-cloud bc5"></div>
+  </div>
+
+  <!-- Main content -->
+  <main class="page">
+
+    <h1 class="title">WEATHERIA</h1>
+
+    <!-- Search bar -->
+    <div class="search-wrap">
+      <input type="text" id="city" placeholder="Search..." />
+      <button onclick="getWeather()">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="7"/>
+    <line x1="17" y1="17" x2="22" y2="22"/>
+  </svg>
+</button>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards">
+
+      <!-- Card 1: Cloudy / Gray -->
+      <div class="card card-cloudy" role="article" aria-label="Cloudy weather">
+        <div class="emoji-sun">⛅</div>
+        <div class="cloud-row">
+          <span class="cloud-emoji">🌥️</span>
+          <span class="cloud-emoji">☁️</span>
+          <span class="cloud-emoji">🌤️</span>
+          <span class="cloud-emoji">⛅</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Rain / Teal -->
+      <div class="card card-rain" role="article" aria-label="Rainy weather">
+        <div class="rain-scene">
+          <div class="rain-cloud"></div>
+          <div class="rain-strings">
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+            <div class="rain-string"></div>
+          </div>
+          <div class="swinger">🧒</div>
+        </div>
+      </div>
+
+      <!-- Card 3: Sunny / Orange -->
+      <div class="card card-sunny" role="article" aria-label="Sunny weather">
+        <div class="rainbow-sun">🌞</div>
+        <div class="rainbow-emoji">🌈</div>
+        <div class="white-cloud">☁️</div>
+      </div>
+
+    </div>
+    <div id="weatherResult">
+
+    <!-- LEFT SIDE -->
+    <div class="left-panel">
+        <img id="weatherIcon" src="" alt="icon">
+        <h1 id="temp">--°C</h1>
+        <p id="title">Weather</p>
+        <p id="desc">Description</p>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="right-panel">
+        <h2 id="time">--:--</h2>
+
+        <div class="details">
+            <p>Real Feel: <span id="feelsLike"></span></p>
+            <p>Wind: <span id="wind"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>Condition: <span id="condition"></span></p>
+        </div>
+    </div>
+    <div class="playlist">
+      <h3>🎧 Suggested Playlist</h3>
+      <a id="playlistLink" href="#" target="_blank">Play Music ▶</a>
+    
+    </div>
+    </div>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
